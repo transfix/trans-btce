@@ -113,4 +113,10 @@ function btce_ltcusd_depth($decode = true)
   return curl_req($url, false, false, $decode);
 }
 
+function btce_fee($pair, $decode = true)
+{
+  $url = "https://btc-e.com/api/2/$pair/fee";
+  return curl_req($url, false, false, $decode);
+}
+
 ?>

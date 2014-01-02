@@ -25,6 +25,13 @@ try
     {
       echo date("D M j G:i:s T Y",btce_server_time())."\n"; 
     }
+  else if($command === "fee")
+    {
+      if(!isset($argv[2])) throw new Exception("fee <pair>");
+      $pair = $argv[2];
+      $fee = btce_fee($pair);
+      echo $fee["trade"]."\n";
+    }
   else if($command === "ticker")
     {
       if(!isset($argv[2])) throw new Exception("ticker <pair> [info]");
